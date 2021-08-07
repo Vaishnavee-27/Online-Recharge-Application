@@ -1,0 +1,27 @@
+create table Registration(
+    Name varchar2(20),
+   Email varchar2(30),
+   Mobile_No varchar2(15),
+   Balance varchar2(15),
+   Username varchar2(15) primary key,
+   Password varchar2(20)
+   );
+   
+   create table Recharge_Transaction(
+   username varchar2(15),
+   Mobile_No varchar2(15),
+   Recharge_Amount varchar2(15),
+   Service_Provider varchar2(20),
+   date1 Date,
+   CONSTRAINT FK_mn FOREIGN KEY (username)
+   REFERENCES Registration(Username)
+   );
+	
+	create table withdraw_deposit(
+	username varchar2(20) 
+	REFERENCES registration(Username),
+	amount varchar2(20),
+	date1 Date,
+	Transaction_type varchar2(20)
+	);
+
